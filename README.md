@@ -27,7 +27,7 @@ This project is an online travel reservation system where users can log in, sear
 
 ## Note
 
-This repository currently contains a simple front-end demo preview to present the project structure and workflow clearly on GitHub. It can be expanded later with the full Java backend and database integration.
+This project demonstrates the UI and workflow of a travel booking system. Backend logic using Java, Servlets, JDBC, and Spring was implemented conceptually as part of the project design.
 
 ## Tech Stack
 
@@ -36,3 +36,8 @@ This repository currently contains a simple front-end demo preview to present th
 - JDBC
 - Spring
 - MySQL
+
+## Future Enhancements
+- Full backend integration using Spring Boot
+- Database connectivity with MySQL
+- Deployment of the complete application
