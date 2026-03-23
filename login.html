@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Travel Booking System</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #667085;
+      --accent: #1d4ed8;
+      --line: #dbe2ea;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+      background: var(--bg);
+      font-family: Arial, sans-serif;
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding: 14px 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #1e40af;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .panel {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .intro {
+      padding: 44px 40px;
+      background: #eff6ff;
+      color: var(--text);
+    }
+
+    .intro h1 {
+      margin: 14px 0 10px;
+      font-size: 34px;
+      line-height: 1.15;
+    }
+
+    .intro p {
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 380px;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: #dbeafe;
+      color: #1e3a8a;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .stats {
+      margin-top: 28px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .stat {
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .form-wrap {
+      padding: 44px 34px;
+      background: #ffffff;
+    }
+
+    .form-wrap h2 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .form-wrap p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      margin: 14px 0 8px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 14px;
+      border: 1px solid #d9dfe7;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px 18px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .links {
+      margin-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 780px) {
+      .panel {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="brand">Travel Booking System</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="booking.html">Booking</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+    </nav>
+
+    <main class="panel">
+      <section class="intro">
+        <span class="chip">Authentication Module</span>
+        <h1>User Login</h1>
+        <p>
+          This page represents the login screen for the project. In the real
+          application, users would be authenticated through the backend and a
+          secure session would be created after successful login.
+        </p>
+        <div class="stats">
+          <div class="stat">
+            <strong>Login Validation</strong>
+            Email and password are checked before dashboard access is allowed.
+          </div>
+          <div class="stat">
+            <strong>Session Handling</strong>
+            User activity remains protected across booking pages.
+          </div>
+        </div>
+      </section>
+
+      <section class="form-wrap">
+        <h2>Sign In</h2>
+        <p>Sample front-end screen for the authentication part of the project.</p>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="rahul@example.com">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Enter your password">
+        <a class="btn" href="dashboard.html">Login to Dashboard</a>
+        <div class="links">
+          <a href="index.html">Back to Home</a>
+          <a href="booking.html">Open Booking Page</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

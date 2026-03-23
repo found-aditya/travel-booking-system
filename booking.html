@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking - Travel Booking System</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --panel: #fff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --accent-soft: #eef4ff;
+      --line: #dbe2ea;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding: 14px 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .header {
+      margin-bottom: 22px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .header p {
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.7;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .panel h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .trip {
+      padding: 16px;
+      border: 1px solid #ececec;
+      border-radius: 10px;
+      margin-top: 16px;
+      background: #ffffff;
+    }
+
+    .trip-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .trip strong {
+      font-size: 18px;
+    }
+
+    .badge {
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .trip p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 12px 0;
+      color: #374151;
+    }
+
+    .cta {
+      display: inline-block;
+      width: 100%;
+      margin-top: 14px;
+      padding: 14px 18px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .nav {
+      margin-top: 16px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 820px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="brand">Travel Booking System</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="booking.html">Booking</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+    </nav>
+
+    <div class="header">
+      <h1>Booking Workflow Demo</h1>
+      <p>
+        This page previews the reservation flow of the Travel Booking System.
+        It can be used as a visual demo of how users browse trips and confirm
+        bookings in the application.
+      </p>
+    </div>
+
+    <div class="layout">
+      <section class="panel">
+        <h2>Available Packages</h2>
+
+        <div class="trip">
+          <div class="trip-top">
+            <strong>Delhi to Goa</strong>
+            <span class="badge">Most Popular</span>
+          </div>
+          <p>Flight, hotel stay, breakfast included, and airport pickup.</p>
+          <p>Travel Date: 12 April 2026 | Price: Rs. 12,499 per person</p>
+        </div>
+
+        <div class="trip">
+          <div class="trip-top">
+            <strong>Mumbai to Jaipur</strong>
+            <span class="badge">Weekend Trip</span>
+          </div>
+          <p>Round-trip flight with city hotel and sightseeing support.</p>
+          <p>Travel Date: 19 April 2026 | Price: Rs. 8,999 per person</p>
+        </div>
+
+        <div class="trip">
+          <div class="trip-top">
+            <strong>Bangalore to Manali</strong>
+            <span class="badge">Adventure</span>
+          </div>
+          <p>Travel and stay combo designed for hill station bookings.</p>
+          <p>Travel Date: 28 April 2026 | Price: Rs. 10,750 per person</p>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <h2>Reservation Summary</h2>
+        <div class="summary-row">
+          <span>Customer</span>
+          <strong>Rahul Sharma</strong>
+        </div>
+        <div class="summary-row">
+          <span>Trip</span>
+          <strong>Delhi to Goa</strong>
+        </div>
+        <div class="summary-row">
+          <span>Passengers</span>
+          <strong>2</strong>
+        </div>
+        <div class="summary-row">
+          <span>Total Fare</span>
+          <strong>Rs. 24,998</strong>
+        </div>
+        <div class="summary-row">
+          <span>Status</span>
+          <strong>Ready to Confirm</strong>
+        </div>
+        <a class="cta" href="dashboard.html">Confirm and View Dashboard</a>
+        <div class="nav">
+          <a href="index.html">Home</a>
+          <a href="login.html">Login Page</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

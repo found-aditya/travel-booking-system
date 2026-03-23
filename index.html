@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Booking System</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --accent-dark: #1e40af;
+      --line: #dbe2ea;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding: 14px 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: #eef4ff;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 16px 0 10px;
+      font-size: 34px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--accent);
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      color: var(--accent-dark);
+      background: transparent;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .card ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .mockup {
+      margin-top: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .mockup-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 14px;
+    }
+
+    .mockup-body {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 0;
+    }
+
+    .booking-panel {
+      padding: 24px;
+      background: #ffffff;
+    }
+
+    .booking-panel h3,
+    .summary-panel h3 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .trip {
+      border: 1px solid #dbe4e3;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 14px;
+      background: #fff;
+    }
+
+    .trip strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .trip span {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .summary-panel {
+      padding: 24px;
+      background: #f8fafc;
+      border-left: 1px solid #dbe2ea;
+    }
+
+    .summary-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 18px;
+      margin-top: 16px;
+      border: 1px solid #dbe2ea;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 12px 0;
+      color: #334155;
+    }
+
+    .status {
+      margin-top: 18px;
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: #e8f3ff;
+      color: #1e40af;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 780px) {
+      .mockup-body {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-panel {
+        border-left: 0;
+        border-top: 1px solid #d4e3e0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="brand">Travel Booking System</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="booking.html">Booking</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <span class="tag">Student Project Demo</span>
+      <h1>Travel Booking System</h1>
+      <p>
+        This is a simple front-end preview for an Online Travel Reservation
+        System built using Java, Servlets, JDBC, Spring, and MySQL. It is meant
+        to show the expected flow of the project on GitHub in a clear and
+        practical way.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="booking.html">Book a Trip</a>
+        <a class="btn btn-secondary" href="login.html">Open Login Page</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Main Features</h2>
+        <ul>
+          <li>User registration and login</li>
+          <li>Search and booking workflow</li>
+          <li>Reservation management</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Backend Design</h2>
+        <ul>
+          <li>MVC architecture using Servlets and Spring</li>
+          <li>Database connectivity with JDBC</li>
+          <li>Session-based authentication</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Tech Stack</h2>
+        <ul>
+          <li>Java</li>
+          <li>Servlets</li>
+          <li>JDBC</li>
+          <li>Spring</li>
+          <li>MySQL</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="mockup">
+      <div class="mockup-header">
+        <span>Online Travel Reservation System</span>
+        <span>Home Page Preview</span>
+      </div>
+      <div class="mockup-body">
+        <div class="booking-panel">
+          <h3>Available Trips</h3>
+          <div class="trip">
+            <strong>Delhi to Goa</strong>
+            <span>Flight + Hotel Package</span>
+            <span>Departure: 12 April 2026</span>
+            <span>Price: Rs. 12,499</span>
+          </div>
+          <div class="trip">
+            <strong>Mumbai to Jaipur</strong>
+            <span>Round Trip Flight</span>
+            <span>Departure: 19 April 2026</span>
+            <span>Price: Rs. 8,999</span>
+          </div>
+          <div class="trip">
+            <strong>Bangalore to Manali</strong>
+            <span>Bus + Stay Combo</span>
+            <span>Departure: 28 April 2026</span>
+            <span>Price: Rs. 10,750</span>
+          </div>
+        </div>
+        <aside class="summary-panel">
+          <h3>Booking Summary</h3>
+          <div class="summary-box">
+            <div class="summary-row">
+              <span>User</span>
+              <strong>Rahul Sharma</strong>
+            </div>
+            <div class="summary-row">
+              <span>Selected Trip</span>
+              <strong>Delhi to Goa</strong>
+            </div>
+            <div class="summary-row">
+              <span>Passengers</span>
+              <strong>2</strong>
+            </div>
+            <div class="summary-row">
+              <span>Total</span>
+              <strong>Rs. 24,998</strong>
+            </div>
+            <span class="status">Session Secure and Booking Confirmed</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="footer">
+      Demo pages: Home, Login, Booking, and Dashboard
+    </div>
+  </div>
+</body>
+</html>
